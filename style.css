@@ -10,21 +10,64 @@ body {
 
 #header {
     margin: 0;
-    padding: 10px 50px;
+    padding: 0px 50px;
 }
 
-form {
-    margin: 0 auto;
-    padding: 20px;
-    
+#header p {
+    font-weight: bolder;
 }
 
-#main label {
-    display: flex;
-    
+table {
+    padding-left: 20px;
 }
 
+#main p {
+    color: red;
+    margin: 0;
+    padding: 0;
+}
 
+.label {
+    text-align: right;
+    vertical-align: top;
+    padding-bottom: 15px;
+    padding-right: 10px;
+}
 
+.input-long {
+    width: 350px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
 
+.input-short {
+    width: 130px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
 
+#zipCode {
+    width:  170px;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+#select {
+    font-size: 0.8em;
+    padding: 3px 0px;
+    margin-bottom: 10px;
+}
+
+.gender, .language {
+    margin-bottom: 20px;
+}
+
+#otherInfo {
+    font-size: 0.8;
+}
+
+#sendBtn {
+    font-size: 1em;
+    margin: 20px 0px 20px 280px;
+    padding: 3px;
+}

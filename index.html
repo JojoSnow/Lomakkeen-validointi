@@ -14,47 +14,71 @@
     </header>
     <main id="main">
         <form id="registerForm">
-            <label for="userId">Käyttäjä ID: 
-                <input type="text" name="userId" id="userId" required>
-            </label><br>
-            <label for="password">Salasana: 
-                <input type="password" name="password" id="password" required>
-            </label><br>
-            <label for="name">Nimi: 
-                <input type="text" name="name" id="name" required>
-            </label><br>
-            <label for="address">Osoite: 
-                <input type="text" name="address" id="address" required>
-            </label><br>
-            <label for="country">Maa: 
-                <select name="select" id="select">
-                    <option value="choose" id="choose" required>(Valitse maa)</option>
-                    <option value="finland" id="countryFinland">Suomi</option>
-                    <option value="sweden" id="countrySweden">Ruotsi</option>
-                    <option value="estonia" id="countryEstonia">Viro</option>
-                    <option value="russia" id="countryRussia">Venäjä</option>
-                </select>
-            </label><br>
-            <label for="zipNumber">Postinumero: 
-                <input type="text" name="zipNumber" id="zipNumber" required>
-            </label><br>
-            <label for="email">Sähköposti: 
-                <input type="email" name="email" id="email" required>
-            </label><br>
-            <label for="gender">Sukupuoli: 
-                <input type="radio" name="male" id="male" checked required>Mies
-                <input type="radio" name="female" id="female">Nainen
-                <input type="radio" name="other" id="other">Muu
-            </label><br>
-            <label for="language">Kieli: 
-                <input type="checkbox" name="language" id="language" checked required>Suomi
-                <input type="checkbox" name="language" id="languageOther">Muu kuin suomi
-            </label><br>
-            <label for="otherInfo">Lisätietoja:
-                <textarea name="otherInfo" id="otherInfo" cols="50" rows="12"></textarea>
-            </label><br>
-            <input type="submit" value="Lähetä">
-        </form>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="label"><label for="userId">Käyttäjä ID:</label></td>
+                        <td><input type="text" name="userId" id="userId" class="input-short">
+                            <p id="userIdAlert"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="password">Salasana:</label></td>
+                        <td><input type="password" name="password" id="password" class="input-short">
+                            <p id="passwordAlert"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="name">Nimi:</label></td>
+                        <td><input type="text" name="name" id="name" class="input-long">
+                            <p id="nameAlert"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="address">Osoite:</label></td>
+                        <td><input type="text" name="address" id="address" class="input-long">
+                            <p id="addressAlert"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="country">Maa:</label></td>
+                        <td><select name="select" id="select">
+                            <option value="choose" id="choose">(Valitse maa)</option>
+                            <option value="finland" id="countryFinland">Suomi</option>
+                            <option value="other" id="countryOther">Muu</option>
+                        </select>
+                        <p id="countryAlert"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="zipCode">Postinumero:</label></td>
+                        <td><input type="number" name="zipCode" id="zipCode" class="input">
+                            <p id="zipCodeAlert"></p></td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="email">Sähköposti:</label></td>
+                        <td><input type="email" name="email" id="email" class="input-long">
+                            <p id="emailAlert"></p></td>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="gender">Sukupuoli:</label></td>
+                        <td><input type="radio" name="gender" class="gender">Mies
+                            <input type="radio" name="gender" class="gender">Nainen
+                            <input type="radio" name="gender" class="gender">Muu
+                            <p id="genderAlert"></p></td>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="language">Kieli:</label></td>
+                        <td><input type="checkbox" name="language" class="language">Suomi
+                            <input type="checkbox" name="language" class="language">Muu kuin suomi
+                            <p id="languageAlert"></p></td>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td class="label"><label for="otherInfo">Lisätietoja:</label></td>
+                        <td><textarea name="otherInfo" id="otherInfo" class="input" cols="50" rows="12"></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" id="sendBtn" value="Lähetä">
+        </form>          
     </main>
     <script src="register.js"></script>
 </body>
