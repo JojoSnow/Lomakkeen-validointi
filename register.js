@@ -55,11 +55,13 @@ function formValidation(event) {
     if(regForm['zipCode'].value === '') {
         document.getElementById('zipCodeAlert').innerHTML = 'Postinumero pitää antaa';
         return false;
+    } else if(!/^[0-9]+$/.test(regForm['zipCode'].value)) {
+        document.getElementById('zipCodeAlert').innerHTML = 'Postinumero voi olla vain numeroita';
     } else {
         document.getElementById('zipCodeAlert').innerHTML = '';
     }
     if(regForm['zipCode'].value.length != 5) {
-        document.getElementById('zipCodeAlert').innerHTML = 'Postinumero pitää olla 5 numeroa';
+        document.getElementById('zipCodeAlert').innerHTML = 'Postinumeron pitää olla 5 numeroa';
         return false;
     } else {
         document.getElementById('zipCodeAlert').innerHTML = '';
@@ -67,6 +69,8 @@ function formValidation(event) {
     if(regForm['email'].value === '') {
         document.getElementById('emailAlert').innerHTML = 'Sähköposti pitää antaa';
         return false;
+    } else if(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(regForm['email'].value) === false) {
+        document.getElementById('emailAlert').innerHTML = 'Anna oikea sähköposti'
     } else {
         document.getElementById('emailAlert').innerHTML = '';
     }
@@ -76,13 +80,15 @@ function formValidation(event) {
     } else {
         document.getElementById('genderAlert').innerHTML = '';
     }
-    if(regForm['language'].checked === false) {
-        document.getElementById('languageAlert').innerHTML = 'Kieli pitää valita';
-        return false;
-    } else {
-        document.getElementById('languageAlert').innerHTML = '';
+    let checkboxes = document.getElementsByClassName('language');
+    for(let i = 0; checkboxes.length > i; i++) {
+        if(checkboxes[i].checked) {
+            document.getElementById('languageAlert').innerHTML = '';
+            return true;
+        }
     }
-    
+    document.getElementById('languageAlert').innerHTML = 'Kieli pitää valita';
+    return false;    
     
 }
 
